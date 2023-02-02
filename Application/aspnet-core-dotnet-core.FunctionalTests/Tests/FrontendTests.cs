@@ -3,7 +3,9 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using System;
 
-namespace SampleWebApplication.FunctionalTests
+using aspnet_core_dotnet_core.FunctionalTests.PageObjects;
+
+namespace aspnet_core_dotnet_core.FunctionalTests
 {
     public class FrontendTests
     {
@@ -20,6 +22,7 @@ namespace SampleWebApplication.FunctionalTests
         {
             _driver = GetChromeDriver();
             _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(300);
+            _driver.Navigate().GoToUrl(_webAppUrl);
         }
 
         [TestCleanup]
