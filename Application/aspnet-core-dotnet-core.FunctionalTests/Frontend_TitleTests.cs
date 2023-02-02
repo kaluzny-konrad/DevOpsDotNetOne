@@ -23,5 +23,19 @@ namespace SampleWebApplication.FunctionalTests
             _driver.Navigate().GoToUrl(_webAppUrl);
             Assert.AreEqual(expectedTitle, _driver.Title);
         }
+
+        [TestMethod]
+        public void TitleShouldBeCorrect_TestShouldFail()
+        {
+            try { TitleShouldBeCorrect_TestShouldFail_RunTest(); }
+            catch (Exception ex) { LogError(ex); throw; }
+        }
+
+        private void TitleShouldBeCorrect_TestShouldFail_RunTest()
+        {
+            var expectedTitle = "Home Page - ASP.NE3T Core";
+            _driver.Navigate().GoToUrl(_webAppUrl);
+            Assert.AreEqual(expectedTitle, _driver.Title);
+        }
     }
 }
